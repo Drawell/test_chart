@@ -1,0 +1,79 @@
+.chart-container {
+  --width: 150px;
+
+  width: var(--width);
+  aspect-ratio: 1;
+  position: relative;
+  margin: auto;
+}
+
+.chart-children {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.chart-title {
+  position: absolute;
+}
+
+.chart-title-top {
+  top: -25px;
+}
+
+.chart-title-bottom {
+  bottom: -20px;
+}
+
+.chart-title-bottom,
+.chart-title-top {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.chart-title-bottom {
+  bottom: -20px;
+}
+
+.chart-title-left {
+  left: -10px;
+  transform: translate(-100%, 0);
+}
+
+.chart-title-right {
+  right: -40px;
+}
+.chart-title-left,
+.chart-title-right {
+  top: calc(50% - 20px);
+}
+
+.circle-chart {
+  --value-percent: 25%;
+  --thickness: 10px;
+  --face-color: orange;
+  --back-color: lightgray;
+  --full-circle-part: 1;
+  --rotation-degree: 0deg;
+
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  background: conic-gradient(
+        var(--face-color) calc(var(--value-percent) * var(--full-circle-part)),
+        #0000 0
+      )
+      no-repeat,
+    conic-gradient(var(--back-color) calc(100% * var(--full-circle-part)), #0000 0);
+
+  mask: radial-gradient(
+    farthest-side,
+    #0000 calc(99% - var(--thickness)),
+    #000f calc(100% - var(--thickness))
+  );
+  transform: rotate(calc(180deg + var(--rotation-degree)));
+}

@@ -1,0 +1,29 @@
+.info-panel {
+  background-color: #fff;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.info-panel-title {
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.info-panel-value,
+.info-panel-total {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.info-panel-value {
+  color: #000;
+}
+
+.info-panel-total {
+  color: #000a;
+}

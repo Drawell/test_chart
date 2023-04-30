@@ -1,26 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import FullCircleDoubleChart from './charts/FullCircleDoubleChart'
+import RandomDataChart from './charts/RandomValuesChart'
+import SimpleDoubleChart from './charts/SimpleDoubleChart'
+import { IModel } from './IDataModel'
+
+const chartData: IModel[] = [
+  {
+    title: 'НИТ',
+    value: 234840,
+    total: 246051,
+  },
+  {
+    title: 'Прогноз',
+    value: 272289,
+    total: 283500,
+  },
+  {
+    title: 'Пятьдесят',
+    value: 50,
+    total: 100,
+  },
+  {
+    title: 'Шестьдесят',
+    value: 60,
+    total: 100,
+  },
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='main-container'>
+        <SimpleDoubleChart first={chartData[0]} second={chartData[1]} />
+
+        <div className='sub-container'>
+          <FullCircleDoubleChart
+            first={chartData[2]}
+            second={chartData[3]}
+            panelPosition='left'
+          />
+          <FullCircleDoubleChart
+            first={chartData[2]}
+            second={chartData[3]}
+            panelPosition='right'
+          />
+        </div>
+
+        <RandomDataChart />
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
